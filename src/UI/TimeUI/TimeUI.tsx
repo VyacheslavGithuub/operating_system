@@ -1,7 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { useTimeUIStyle } from "./style";
 
-const TimeUI = () => {
+interface ITimeUIProps {
+  isVisible: boolean;
+}
+const TimeUI = ({ isVisible }: ITimeUIProps) => {
   const [isTime, setTime] = useState<any>();
 
   useEffect(() => {
@@ -12,7 +15,7 @@ const TimeUI = () => {
   }, []);
 
   const { TimeSC } = useTimeUIStyle();
-  return <TimeSC>{isTime}</TimeSC>;
+  return <TimeSC isVisible={isVisible}>{isTime}</TimeSC>;
 };
 
 export default React.memo(TimeUI);
