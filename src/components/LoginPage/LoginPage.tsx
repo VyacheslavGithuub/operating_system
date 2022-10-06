@@ -1,5 +1,5 @@
 import { useState } from "react";
-import ButtonUI from "./ButtonUI/ButtonUI";
+import LoginPageButton from "./LoginPageButton/LoginPageButton";
 import TimeUI from "../../UI/TimeUI/TimeUI";
 import { useLoginPageStyle } from "./style";
 import LoginPageForm from "./LoginPageForm/LoginPageForm";
@@ -20,13 +20,13 @@ const LoginPage = () => {
     <LoginPageSC isVisible={isVisible}>
       <LoginPageBlurSC isVisible={isVisible}>
         <LoginPageFormSC isVisible={isVisible}>
-          <LoginPageForm />
+          <LoginPageForm isFocus={isVisible} />
           <EnterPinSC>Enter PIN (1234) </EnterPinSC>
           <CancelSC onClick={handleSubmit}>Cancel</CancelSC>
         </LoginPageFormSC>
-        <ButtonUI onClick={() => handleSubmit()}>
+        <LoginPageButton isVisible={isVisible} onClick={() => handleSubmit()}>
           <div>{"=>"}</div>
-        </ButtonUI>
+        </LoginPageButton>
         <TimeUI isVisible={isVisible} />
       </LoginPageBlurSC>
     </LoginPageSC>

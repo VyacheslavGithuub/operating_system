@@ -7,7 +7,6 @@ const LoginPageSC = styled.div<{ isVisible: boolean }>`
     isVisible ? "120% 120%" : "100% 100%"};
   min-height: 100vh;
   transition: background 0.3s ease;
-
   @media (max-width: 800px) {
     background-image: url(https://images.wallpaperscraft.ru/image/single/paporotnik_list_rastenie_zelenyj_119970_800x1200.jpg);
   }
@@ -25,7 +24,9 @@ const LoginPageFormSC = styled.div<{ isVisible: boolean }>`
   visibility: ${({ isVisible }) => (isVisible ? "visible" : "hidden")};
   position: absolute;
   top: calc(50% - 80px);
-  left: calc(50% - 140px);
+  left: calc(50% - 103px);
+  opacity: ${({ isVisible }) => (isVisible ? "1" : "0")};
+  transition: opacity 0.1s ease;
 `;
 const EnterPinSC = styled.span`
   color: white;

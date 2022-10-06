@@ -10,7 +10,7 @@ const TimeSC = styled.time<{ isVisible: boolean }>`
   position: absolute;
   bottom: 50px;
   left: ${({ isVisible }) => (isVisible ? "-250px" : "50px")};
-  transition: left 0.3s ease;
+  transition: left 0.2s ease;
 
   @media (max-width: 800px) {
     font-size: 80px;

@@ -30,7 +30,7 @@ const rotate = keyframes`
   }
 `;
 
-const ButtonSC = styled.button`
+const ButtonSC = styled.button<{ isVisible: boolean }>`
   width: 150px;
   height: 50px;
 
@@ -50,7 +50,8 @@ const ButtonSC = styled.button`
   position: absolute;
   bottom: 50px;
   left: calc(50% - 75px);
-
+  opacity: ${({ isVisible }) => (isVisible ? "0" : "1")};
+  transition: opacity 0.2s ease;
   animation: ${rotate} 5s linear infinite;
 
   &:hover {
