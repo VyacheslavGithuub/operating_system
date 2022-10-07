@@ -1,14 +1,18 @@
 import React from "react";
 import { useForm } from "react-hook-form";
+import { useAppDispatch } from "../../../store/hooks/redux";
+import { putIsAuth } from "../../../store/reducers/InputSlice/InputSlice";
 import { useLoginPageFormStyle } from "./style";
 
 interface ILoginPageFormProps {
   isFocus: boolean;
 }
 const LoginPageForm = ({ isFocus }: ILoginPageFormProps) => {
+  const dispatch = useAppDispatch();
   const { register, handleSubmit, setFocus } = useForm();
-  const onSubmit = (data: any) => console.log(data);
-
+  const onSubmit = (data: any) => {
+    data && dispatch(putIsAuth(true));
+  };
   const { LoginPageInput } = useLoginPageFormStyle();
 
   React.useEffect(() => {
