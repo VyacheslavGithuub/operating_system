@@ -15,7 +15,7 @@ const MainLayout = () => {
   };
   return (
     <div>
-      MainLayout
+      Обрати внимание на анимации
       <button onClick={() => handleCloses()}>Вернуться</button>
     </div>
   );
