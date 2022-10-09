@@ -1,11 +1,10 @@
 import { createSlice } from "@reduxjs/toolkit";
-
-interface IInputSlice {
-  isAuth: boolean;
-}
+import { IInputSlice } from "./types";
 
 const initialState: IInputSlice = {
   isAuth: false,
+  isVisible_pinCode: false,
+  closeBlur: false,
 };
 
 export const InputSlice = createSlice({
@@ -15,8 +14,14 @@ export const InputSlice = createSlice({
     putIsAuth: (state, action) => {
       state.isAuth = action.payload;
     },
+    putInput: (state, action) => {
+      state.isVisible_pinCode = action.payload;
+    },
+    setCloseBlur: (state, action) => {
+      state.closeBlur = action.payload;
+    },
   },
 });
 
-export const { putIsAuth } = InputSlice.actions;
+export const { putIsAuth, putInput, setCloseBlur } = InputSlice.actions;
 export default InputSlice.reducer;

@@ -1,10 +1,18 @@
 import React from "react";
 import { useAppDispatch } from "../../store/hooks/redux";
-import { putIsAuth } from "../../store/reducers/InputSlice/InputSlice";
+import {
+  putInput,
+  putIsAuth,
+  setCloseBlur,
+} from "../../store/reducers/InputSlice/InputSlice";
 
 const MainLayout = () => {
   const dispatch = useAppDispatch();
-  const handleCloses = () => dispatch(putIsAuth(false));
+  const handleCloses = () => {
+    dispatch(putIsAuth(false));
+    dispatch(setCloseBlur(false));
+    dispatch(putInput(false));
+  };
   return (
     <div>
       MainLayout

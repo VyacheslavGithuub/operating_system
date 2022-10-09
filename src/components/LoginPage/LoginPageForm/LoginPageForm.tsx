@@ -3,17 +3,22 @@ import { useForm } from "react-hook-form";
 import { useAppDispatch } from "../../../store/hooks/redux";
 import { putIsAuth } from "../../../store/reducers/InputSlice/InputSlice";
 import { useLoginPageFormStyle } from "./style";
+import { ILoginPageFormProps, ILoginPageFormValues } from "./types";
 
-interface ILoginPageFormProps {
-  isFocus: boolean;
-}
 const LoginPageForm = ({ isFocus }: ILoginPageFormProps) => {
+  const { LoginPageInput, LoginPageInputError } = useLoginPageFormStyle();
   const dispatch = useAppDispatch();
-  const { register, handleSubmit, setFocus } = useForm();
-  const onSubmit = (data: any) => {
+
+  const {
+    register,
+    handleSubmit,
+    setFocus,
+    formState: { errors },
+  } = useForm<ILoginPageFormValues>();
+
+  const onSubmit = (data: ILoginPageFormValues) => {
     data && dispatch(putIsAuth(true));
   };
-  const { LoginPageInput } = useLoginPageFormStyle();
 
   React.useEffect(() => {
     setFocus("pin");
@@ -21,15 +26,13 @@ const LoginPageForm = ({ isFocus }: ILoginPageFormProps) => {
 
   return (
     <form onChange={handleSubmit(onSubmit)}>
+      {errors.pin && <LoginPageInputError />}
       <LoginPageInput
         autoComplete="off"
+        maxLength={4}
+        required={true}
         type="password"
         {...register("pin", {
-          required: true,
-          pattern: /^[0-9]$/,
-          valueAsNumber: true,
-          maxLength: 4,
-
           validate: {
             value: (i) => parseInt(i) === 1234,
           },

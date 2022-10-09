@@ -1,34 +1,26 @@
 import styled from "styled-components";
 
-const TimeSC = styled.time<{ isVisible: boolean }>`
-  display: flex;
+const TimeSC = styled.time`
   user-select: none;
   color: #d2dae2;
   font-size: 100px;
   font-family: Arial, Helvetica, sans-serif;
   line-height: 80%;
-  position: absolute;
-  bottom: 50px;
-  left: ${({ isVisible }) => (isVisible ? "-250px" : "50px")};
-  transition: left 0.2s ease;
-
+  @media (max-width: 1024px) {
+    font-size: 90px;
+  }
   @media (max-width: 800px) {
+    color: #24414b;
     font-size: 80px;
   }
   @media (max-width: 600px) {
-    font-size: 60px;
-    left: calc(50% - 75px);
+    font-size: 4em;
   }
   @media (max-width: 400px) {
-    font-size: 40px;
-    left: calc(50% - 50px);
+    font-size: 3em;
   }
 `;
-const TimeHours = styled.span``;
-const TimeMinutes = styled.span``;
 
 export const useTimeUIStyle = () => ({
   TimeSC,
-  TimeHours,
-  TimeMinutes,
 });

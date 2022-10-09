@@ -30,53 +30,42 @@ const rotate = keyframes`
   }
 `;
 
-const ButtonSC = styled.button<{ isVisible: boolean }>`
+const ButtonAnimationSC = styled.button<{ isVisible: boolean }>`
   width: 150px;
   height: 50px;
-
-  backdrop-filter: blur(3px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  background-color: rgba(255, 255, 255, 0.1);
-  box-shadow: 2px 2px 4px rgb(0 0 0 / 25%);
-  border-radius: 40px;
-  cursor: pointer;
-  color: wheat;
-  font-size: 25px;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: ${({ isVisible }) => (isVisible ? "auto" : "pointer")};
 
   position: absolute;
   bottom: 50px;
   left: calc(50% - 75px);
+
   opacity: ${({ isVisible }) => (isVisible ? "0" : "1")};
   transition: opacity 0.2s ease;
   animation: ${rotate} 5s linear infinite;
 
   &:hover {
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    background-color: rgba(255, 255, 255, 0.2);
     animation: none;
   }
 
   @media (max-width: 1024px) {
     width: 120px;
     font-size: 22px;
-  }
-  @media (max-width: 800px) {
-    width: 100px;
-    font-size: 18px;
+    left: calc(50% - 60px);
   }
   @media (max-width: 600px) {
-    width: 80px;
-    font-size: 15px;
+    font-size: 18px;
   }
   @media (max-width: 400px) {
+    width: 100px;
+    height: 40px;
     font-size: 15px;
+    left: calc(50% - 50px);
   }
 `;
 
-export const useButtonSCStyle = () => ({
-  ButtonSC,
+export const useTButtonAnimationStyle = () => ({
+  ButtonAnimationSC,
 });

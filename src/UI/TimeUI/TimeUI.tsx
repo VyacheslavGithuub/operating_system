@@ -5,17 +5,25 @@ interface ITimeUIProps {
   isVisible: boolean;
 }
 const TimeUI = ({ isVisible }: ITimeUIProps) => {
+  const { TimeSC } = useTimeUIStyle();
   const [isTime, setTime] = useState<any>();
 
-  useEffect(() => {
-    setTime(new Date().getHours() + ":" + new Date().getMinutes());
+  const FTime = () => {
+    let data = new Date();
+    let hours: any = data.getHours();
+    let minutes: any = data.getMinutes();
+
+    setTime(("0" + hours).slice(-2) + ":" + ("0" + minutes).slice(-2));
     setInterval(() => {
-      setTime(new Date().getHours() + ":" + new Date().getMinutes());
+      setTime(("0" + hours).slice(-2) + ":" + ("0" + minutes).slice(-2));
     }, 1000);
+  };
+
+  useEffect(() => {
+    FTime();
   }, []);
 
-  const { TimeSC } = useTimeUIStyle();
-  return <TimeSC isVisible={isVisible}>{isTime}</TimeSC>;
+  return <TimeSC>{isTime}</TimeSC>;
 };
 
 export default React.memo(TimeUI);
