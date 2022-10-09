@@ -1,4 +1,4 @@
-import React, { TouchEvent, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useAppDispatch, useAppSelector } from "../store/hooks/redux";
 import {
   putInput,
@@ -24,12 +24,12 @@ const App: React.FC = () => {
   const [numberYOpacity, setNumberYOpacity] = useState<number>(0);
 
   // Для эмитирования отправки данных на сервер
-  useEffect(() => {
-    if (isAuth) {
-      dispatch(setCloseBlur(true));
-      dispatch(putInput(false));
-    }
-  }, [dispatch, isAuth]);
+  // useEffect(() => {
+  //   if (isAuth) {
+  //     dispatch(setCloseBlur(true));
+  //     dispatch(putInput(false));
+  //   }
+  // }, [dispatch, isAuth]);
 
   const handleTouchMove = (e: any) => {
     setSwapPosition(e.targetTouches[0].clientY);
@@ -69,27 +69,24 @@ const App: React.FC = () => {
       setNumberYPosition(20);
       setNumberYOpacity(1);
     }
-    if (difference < 1 && touchEnd < 1) {
-      setTouchEnd(0);
-      setNumberYPosition(0);
-      setNumberYOpacity(0);
-      setTouchStart(0);
-    }
+
+    // if (difference < 1 && touchEnd < 1) {
+    //   setTouchEnd(0);
+    //   setNumberYPosition(0);
+    //   setNumberYOpacity(0);
+    //   setTouchStart(0);
+    // }
+    // Если ввели неправильный пин то сбрасываем все состояния
     if (isAuth) {
+      dispatch(putInput(false));
+      dispatch(setCloseBlur(true));
       setTouchEnd(0);
       setNumberYPosition(0);
       setNumberYOpacity(0);
       setTouchStart(0);
     }
-  }, [
-    SwapPosition,
-    touchEnd,
-    isAuth,
-    defaultMeaning,
-    difference,
-    touchStart,
-    dispatch,
-  ]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [isAuth, difference, SwapPosition, touchEnd, dispatch]);
   return (
     <AppSC isVisible={isVisible_pinCode}>
       {/* <AppBlurSC
@@ -111,9 +108,9 @@ const App: React.FC = () => {
       ) : (
         <AppBlurSC
           isVisible={numberYOpacity}
-          onTouchStart={(e) => handleTouchStart(e)}
-          onTouchMove={(e) => handleTouchMove(e)}
-          onTouchEnd={(e) => handleTouchEnd(e)}
+          onTouchStart={(e: any) => handleTouchStart(e)}
+          onTouchMove={(e: any) => handleTouchMove(e)}
+          onTouchEnd={(e: any) => handleTouchEnd(e)}
         >
           {!isAuth && (
             <LoginPage
