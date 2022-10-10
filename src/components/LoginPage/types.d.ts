@@ -1,5 +1,5 @@
 export interface ILoginPageProps {
   isAuth: boolean;
-  numberYPosition: number;
-  numberYOpacity: number;
+  SwipeDistance: number;
+  isVisible_pinCode: boolean;
 }

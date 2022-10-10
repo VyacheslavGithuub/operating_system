@@ -4,24 +4,24 @@ import { IInputSlice } from "./types";
 const initialState: IInputSlice = {
   isAuth: false,
   isVisible_pinCode: false,
-  closeBlur: false,
+  isBlur: false,
 };
 
 export const InputSlice = createSlice({
   name: "input",
   initialState,
   reducers: {
-    putIsAuth: (state, action) => {
+    putAuth: (state, action) => {
       state.isAuth = action.payload;
     },
-    putInput: (state, action) => {
-      state.isVisible_pinCode = action.payload;
+    putBlur: (state, action) => {
+      state.isBlur = action.payload;
     },
-    setCloseBlur: (state, action) => {
-      state.closeBlur = action.payload;
+    putVisible_pinCode: (state, action) => {
+      state.isVisible_pinCode = action.payload;
     },
   },
 });
 
-export const { putIsAuth, putInput, setCloseBlur } = InputSlice.actions;
+export const { putAuth, putBlur, putVisible_pinCode } = InputSlice.actions;
 export default InputSlice.reducer;
