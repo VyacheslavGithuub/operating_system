@@ -1,17 +1,12 @@
 import React from "react";
 import TimeUI from "../../UI/TimeUI/TimeUI";
 import { useLoginPageStyle } from "./style";
-import LoginPageForm from "./LoginPageForm/LoginPageForm";
-import { useAppDispatch } from "../../store/hooks/redux";
-
-import { ILoginPageProps } from "./types";
-import TButtonAnimationUI from "../../UI/TransparentButtonUI/TButtonAnimationUI/TButtonAnimationUI";
-import AnimatedUpArrowsUI from "../../UI/AnimatedUpArrowsUI/AnimatedUpArrowsUI";
-import { useMatchMedia } from "../../hooks/useMatchMedia";
-import { putVisible_pinCode } from "../../store/reducers/InputSlice/InputSlice";
 import { useLoginPage } from "./useLoginPage";
+import LoginPageForm from "./LoginPageForm/LoginPageForm";
+import AnimatedUpArrowsUI from "../../UI/AnimatedUpArrowsUI/AnimatedUpArrowsUI";
+import TButtonAnimationUI from "../../UI/TransparentButtonUI/TButtonAnimationUI/TButtonAnimationUI";
 
-const LoginPage = () => {
+function LoginPage() {
   // стили
   const {
     TimeSC,
@@ -23,30 +18,24 @@ const LoginPage = () => {
     AnimatedUpArrowsUISC,
     LoginPageCenterBlock,
   } = useLoginPageStyle();
-  // ???
+  // Логика
   const {
-    handlers,
+    isAuth,
+    isMobile,
+    swipeProps,
     SwipeDistance,
     isVisible_pinCode,
-    isAuth,
+    handleSetPinCode,
     handleResetPinCode,
+    handleResetPinCodeMobile,
   } = useLoginPage();
-
-  // useApp
-  const dispatch = useAppDispatch();
-  const { isMobile }: any = useMatchMedia();
-
-  //handle для показа формы
-  const handleSubmit = () => {
-    dispatch(putVisible_pinCode(!isVisible_pinCode));
-  };
-  console.log(isVisible_pinCode);
 
   return (
     <LoginPageSC
-      {...handlers}
+      {...swipeProps}
       SwipeDistance={SwipeDistance}
-      onClick={handleResetPinCode}
+      onClick={handleResetPinCodeMobile}
+      isBlur={isVisible_pinCode}
     >
       {/* Форма Входа */}
       {isVisible_pinCode && (
@@ -58,7 +47,7 @@ const LoginPage = () => {
             <LoginPageFormSC isVisible={isVisible_pinCode}>
               <LoginPageForm isFocus={isVisible_pinCode} />
               <EnterPinSC>Enter PIN (1234) </EnterPinSC>
-              <CancelSC onClick={handleSubmit}>Cancel</CancelSC>
+              <CancelSC onClick={handleResetPinCode}>Cancel</CancelSC>
             </LoginPageFormSC>
           </LoginPageFormWrapSC>
         </LoginPageCenterBlock>
@@ -72,7 +61,7 @@ const LoginPage = () => {
       ) : (
         <TButtonAnimationUI
           isVisible={isVisible_pinCode}
-          onClick={() => handleSubmit()}
+          onClick={handleSetPinCode}
         >
           <div>{"=>"}</div>
         </TButtonAnimationUI>
@@ -83,6 +72,6 @@ const LoginPage = () => {
       </TimeSC>
     </LoginPageSC>
   );
-};
+}
 
 export default React.memo(LoginPage);

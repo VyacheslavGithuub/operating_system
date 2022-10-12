@@ -6,9 +6,9 @@ import { useApp } from "./useApp";
 
 const App: React.FC = () => {
   const { AppSC } = useAppStyle();
-  const { isAuth, isVisible_pinCode } = useApp();
+  const { isAuth, isVisible_pinCode, windowInnerHeight } = useApp();
   return (
-    <AppSC isVisible={isVisible_pinCode} windowInnerHeight={0}>
+    <AppSC isVisible={isVisible_pinCode} windowInnerHeight={windowInnerHeight}>
       {isAuth ? <MainLayout /> : <LoginPage />}
     </AppSC>
   );

@@ -1,8 +1,10 @@
 import styled from "styled-components"
 
-const LoginPageSC = styled.div<{ SwipeDistance: number }>`
+const LoginPageSC = styled.div<{ SwipeDistance: number; isBlur: boolean }>`
   width: 100%;
   height: 100%;
+  backdrop-filter: blur(${({ isBlur }) => isBlur && "7px"});
+
   @media (max-width: 600px) {
     backdrop-filter: blur(${({ SwipeDistance }) => SwipeDistance / 150 + "px"});
   }
