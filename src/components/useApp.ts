@@ -25,10 +25,16 @@ export const useApp = () => {
   let BgArray = BackgroundThemeObj.filter((v) => v.id === backgroundT);
   // объект с текущими параметрами background
   let BgObj = BgArray[0];
+  console.log(BgObj);
+
   let getLocalStoreg = Number(localStorage.getItem("background"));
   useLayoutEffect(() => {
-    // до загрузки компонента сетаем значчение из localStoreg
-    setBackgroundT(getLocalStoreg);
+    if (localStorage.getItem("background") === null) {
+      localStorage.setItem("background", "1");
+    } else {
+      // до загрузки компонента сетаем значчение из localStoreg
+      setBackgroundT(getLocalStoreg);
+    }
   }, [getLocalStoreg]);
 
   return {
