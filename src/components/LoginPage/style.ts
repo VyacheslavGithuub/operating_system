@@ -1,7 +1,13 @@
 import styled from "styled-components"
 
-const LoginPageSC = styled.div`
+const LoginPageSC = styled.div<{ SwipeDistance: number; isBlur: boolean }>`
   width: 100%;
+  height: 100%;
+  backdrop-filter: blur(${({ isBlur }) => isBlur && "7px"});
+
+  @media (max-width: 600px) {
+    backdrop-filter: blur(${({ SwipeDistance }) => SwipeDistance / 150 + "px"});
+  }
 `;
 const LoginPageCenterBlock = styled.div`
   position: absolute;
@@ -54,8 +60,7 @@ const LoginPageFormSC = styled.div<{ isVisible: boolean }>`
 `;
 const TimeSC = styled.div<{
   isVisible: boolean;
-  numberYPosition: number;
-  numberYOpacity: number;
+  SwipeDistance: number;
 }>`
   position: absolute;
   bottom: 50px;
@@ -70,23 +75,23 @@ const TimeSC = styled.div<{
   @media (max-width: 600px) {
     height: 75px;
     left: calc(50% - 77.5px);
+    top: calc(10% + ${({ SwipeDistance }) => SwipeDistance / 10 + "px"});
+    opacity: calc(1 - ${({ SwipeDistance }) => SwipeDistance / 350});
+    transition: top 0.1s ease;
   }
   @media (max-width: 400px) {
     height: 55px;
     left: calc(50% - 58.5px);
-    top: calc(10% + ${({ numberYPosition }) => numberYPosition + "px"});
-    opacity: calc(1 - ${({ numberYOpacity }) => numberYOpacity});
-    transition: top 0.1s ease;
   }
 `;
 const AnimatedUpArrowsUISC = styled.div<{
-  numberYPosition: number;
-  numberYOpacity: number;
+  SwipeDistance: number;
 }>`
   position: absolute;
-  bottom: calc(10% + ${({ numberYPosition }) => numberYPosition + "px"});
+  bottom: calc(10% + ${({ SwipeDistance }) => SwipeDistance / 50 + "px"});
   left: calc(50% - 10px);
-  opacity: calc(1 - ${({ numberYOpacity }) => numberYOpacity});
+  opacity: calc(1 - ${({ SwipeDistance }) => SwipeDistance / 350});
+  transition: bottom 0.1s ease;
 `;
 
 export const useLoginPageStyle = () => ({
