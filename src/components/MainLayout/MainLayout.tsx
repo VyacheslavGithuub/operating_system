@@ -5,8 +5,21 @@ import {
   putAuth,
   putBlur,
 } from "../../store/reducers/InputSlice/InputSlice";
+import BackgroundTheme from "./BackgroundTheme/BackgroundTheme";
+import { useMainLayoutStyle } from "./style";
+import Weather from "./Weather/Weather";
 
-const MainLayout = () => {
+interface IMainLayoutProps {
+  BackgroundThemeObj: any;
+  HLocalStorage: (arg0: number) => void;
+}
+
+const MainLayout = ({
+  BackgroundThemeObj,
+  HLocalStorage,
+}: IMainLayoutProps) => {
+  const { MainLayoutSC } = useMainLayoutStyle();
+
   const dispatch = useAppDispatch();
   const handleCloses = () => {
     dispatch(putAuth(false));
@@ -14,11 +27,16 @@ const MainLayout = () => {
     dispatch(putVisible_pinCode(false));
   };
   return (
-    <div>
+    <MainLayoutSC>
       Обрати внимание на анимации
       <button onClick={() => handleCloses()}>Вернуться</button>
-    </div>
+      <Weather />
+      <BackgroundTheme
+        BackgroundThemeObj={BackgroundThemeObj}
+        HLocalStorage={HLocalStorage}
+      />
+    </MainLayoutSC>
   );
 };
 
-export default MainLayout;
+export default React.memo(MainLayout);
