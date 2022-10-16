@@ -12,6 +12,8 @@ export interface IDataWeather {
     observation_time: string;
     // осадок
     precip: number;
+    // Температура
+    temperature: number;
     // давление
     pressure: number;
     // температура
@@ -22,7 +24,7 @@ export interface IDataWeather {
     // код погоды
     weather_code: number;
     // описания погоды
-    weather_descriptions: string[];
+    weather_descriptions: str[];
     // иконки погоды
     weather_icons: string[];
     // градус ветра

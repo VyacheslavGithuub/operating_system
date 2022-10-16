@@ -8,6 +8,10 @@ export const useApp = () => {
   );
   // Стейт для манипуляций с фоном
   const [backgroundT, setBackgroundT] = useState<number>(1);
+  // const [theme, setTheme] = useState("blue");
+  // const switchTheme = () => {
+  //   theme === "blue" ? setTheme("dark") : setTheme("blue");
+  // };
 
   const [windowInnerHeight, setWindowInnerHeight] = useState<number>(0);
 
@@ -25,7 +29,6 @@ export const useApp = () => {
   let BgArray = BackgroundThemeObj.filter((v) => v.id === backgroundT);
   // объект с текущими параметрами background
   let BgObj = BgArray[0];
-  console.log(BgObj);
 
   let getLocalStoreg = Number(localStorage.getItem("background"));
   useLayoutEffect(() => {
@@ -40,6 +43,7 @@ export const useApp = () => {
   return {
     BgObj,
     isAuth,
+    backgroundT,
     HLocalStorage,
     isVisible_pinCode,
     windowInnerHeight,

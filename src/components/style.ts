@@ -11,7 +11,9 @@ interface IAppSCProps {
 
 const AppSC = styled.div<IAppSCProps>`
   height: 100vh;
-
+  color: ${(props) => props.theme.main};
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   background: url(${({ lg }) => lg}) 50% 50% no-repeat;
   background-size: ${({ isVisible, isAuth }) =>
     isVisible && !isAuth ? "120% 120%" : "100% 100%"};

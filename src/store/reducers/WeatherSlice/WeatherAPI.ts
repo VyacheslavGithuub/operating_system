@@ -7,7 +7,7 @@ export const weatherAPI = createApi({
   endpoints: (build) => ({
     getDataWeather: build.query<IDataWeather, "">({
       query: () => ({
-        url: `current?access_key=af3a4c8a04784239afd4e8fa45d7de03&query=New%20York`,
+        url: `current?access_key=af3a4c8a04784239afd4e8fa45d7de03&query=Chelyabinsk`,
       }),
     }),
   }),
