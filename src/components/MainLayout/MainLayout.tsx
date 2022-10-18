@@ -5,6 +5,7 @@ import {
   putAuth,
   putBlur,
 } from "../../store/reducers/InputSlice/InputSlice";
+import Applications from "./Applications/Applications";
 import BackgroundTheme from "./BackgroundTheme/BackgroundTheme";
 import { useMainLayoutStyle } from "./style";
 import Weather from "./Weather/Weather";
@@ -28,9 +29,9 @@ const MainLayout = ({
   };
   return (
     <MainLayoutSC>
-      Обрати внимание на анимации
+      <Applications />
       <button onClick={() => handleCloses()}>Вернуться</button>
-      <Weather />
+      {/* <Weather /> */}
       <BackgroundTheme
         BackgroundThemeObj={BackgroundThemeObj}
         HLocalStorage={HLocalStorage}

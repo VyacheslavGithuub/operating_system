@@ -21,7 +21,7 @@ const TimeUI = ({ isVisible }: ITimeUIProps) => {
 
   useEffect(() => {
     FTime();
-  }, []);
+  }, [isTime]);
 
   return <TimeSC>{isTime}</TimeSC>;
 };

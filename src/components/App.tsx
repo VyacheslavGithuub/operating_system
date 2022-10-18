@@ -1,6 +1,7 @@
 import React from "react";
 import { ThemeProvider } from "styled-components";
-import { blue_theme, dark_theme, orange_theme } from "../theme/theme";
+import { dark_theme, light_theme } from "../theme/theme";
+import LoginPage from "./LoginPage/LoginPage";
 import MainLayout from "./MainLayout/MainLayout";
 import { useAppStyle } from "./style";
 import { useApp } from "./useApp";
@@ -18,35 +19,25 @@ const App: React.FC = () => {
   } = useApp();
 
   return (
-    <ThemeProvider
-      theme={
-        backgroundT === 1
-          ? blue_theme
-          : backgroundT === 2
-          ? dark_theme
-          : orange_theme
-      }
-    >
+    <ThemeProvider theme={backgroundT === 1 ? light_theme : dark_theme}>
       <AppSC
         isAuth={isAuth}
         isVisible={isVisible_pinCode}
         windowInnerHeight={windowInnerHeight}
-        lg={BgObj.lg}
-        md={BgObj.md}
-        sm={BgObj.sm}
+        background={BgObj.background}
       >
-        <MainLayout
+        {/* <MainLayout
           BackgroundThemeObj={BackgroundThemeObj}
           HLocalStorage={HLocalStorage}
-        />
-        {/* {isAuth ? (
-        <MainLayout
-          BackgroundThemeObj={BackgroundThemeObj}
-          HLocalStorage={HLocalStorage}
-        />
-      ) : (
-        <LoginPage />
-      )} */}
+        /> */}
+        {isAuth ? (
+          <MainLayout
+            BackgroundThemeObj={BackgroundThemeObj}
+            HLocalStorage={HLocalStorage}
+          />
+        ) : (
+          <LoginPage />
+        )}
       </AppSC>
     </ThemeProvider>
   );
