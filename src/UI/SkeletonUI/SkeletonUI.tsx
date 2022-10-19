@@ -1,4 +1,3 @@
-import React from "react";
 import { useSkeletonStyle } from "./style";
 import { ISkeletonUIProps } from "./types";
 

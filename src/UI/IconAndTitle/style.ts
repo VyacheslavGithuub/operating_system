@@ -3,6 +3,7 @@ import styled from "styled-components";
 const IconSC = styled.div`
   margin-right: 5px;
   fill: ${(props) => props.theme.main};
+  margin-bottom: 10px;
 `;
 const TitleSC = styled.div`
   letter-spacing: 3px;

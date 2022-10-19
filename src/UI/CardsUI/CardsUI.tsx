@@ -1,11 +1,6 @@
 import React from "react";
 import { useCardsUIStyled } from "./style";
-
-interface ICardsUIProps {
-  variant: string | "small" | "medium" | "large";
-  title: string;
-  children?: React.ReactNode;
-}
+import { ICardsUIProps } from "./types";
 
 const CardsUI = ({ variant, title, children }: ICardsUIProps) => {
   const { CardsUIContainerSC, CardsShadowSC, CardTitleSC, CardIconSC } =
