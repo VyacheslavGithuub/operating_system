@@ -66,13 +66,20 @@ const TimeSC = styled.div<{
   bottom: 50px;
   left: ${({ isVisible }) => (isVisible ? "-250px" : "50px")};
   transition: left 0.2s ease;
+  font-size: 100px;
+  line-height: 80%;
 
+  @media (max-width: 1024px) {
+    font-size: 90px;
+  }
   @media (max-width: 800px) {
     height: 90px;
     top: 10%;
     left: calc(50% - 97.5px);
+    font-size: 80px;
   }
   @media (max-width: 600px) {
+    font-size: 4em;
     height: 75px;
     left: calc(50% - 77.5px);
     top: calc(10% + ${({ SwipeDistance }) => SwipeDistance / 10 + "px"});
@@ -82,6 +89,7 @@ const TimeSC = styled.div<{
   @media (max-width: 400px) {
     height: 55px;
     left: calc(50% - 58.5px);
+    font-size: 3em;
   }
 `;
 const AnimatedUpArrowsUISC = styled.div<{
@@ -94,12 +102,20 @@ const AnimatedUpArrowsUISC = styled.div<{
   transition: bottom 0.1s ease;
 `;
 
+const IconRightArrowSC = styled.div`
+  position: relative;
+  top: 2px;
+  left: 5px;
+  fill: ${(props) => props.theme.BagSmallCard};
+`;
+
 export const useLoginPageStyle = () => ({
   TimeSC,
   CancelSC,
   EnterPinSC,
   LoginPageSC,
   LoginPageFormSC,
+  IconRightArrowSC,
   LoginPageFormWrapSC,
   AnimatedUpArrowsUISC,
   LoginPageCenterBlock,

@@ -5,6 +5,7 @@ import { useLoginPage } from "./useLoginPage";
 import LoginPageForm from "./LoginPageForm/LoginPageForm";
 import AnimatedUpArrowsUI from "../../UI/AnimatedUpArrowsUI/AnimatedUpArrowsUI";
 import TButtonAnimationUI from "../../UI/TransparentButtonUI/TButtonAnimationUI/TButtonAnimationUI";
+import IconRightArrow from "../Icon/IconRightArrow";
 
 function LoginPage() {
   // стили
@@ -14,6 +15,7 @@ function LoginPage() {
     EnterPinSC,
     LoginPageSC,
     LoginPageFormSC,
+    IconRightArrowSC,
     LoginPageFormWrapSC,
     AnimatedUpArrowsUISC,
     LoginPageCenterBlock,
@@ -24,8 +26,8 @@ function LoginPage() {
     isMobile,
     swipeProps,
     SwipeDistance,
-    isVisible_pinCode,
     handleSetPinCode,
+    isVisible_pinCode,
     handleResetPinCode,
     handleResetPinCodeMobile,
   } = useLoginPage();
@@ -62,13 +64,16 @@ function LoginPage() {
         <TButtonAnimationUI
           isVisible={isVisible_pinCode}
           onClick={handleSetPinCode}
+          size="small"
         >
-          <div>{"=>"}</div>
+          <IconRightArrowSC>
+            <IconRightArrow />
+          </IconRightArrowSC>
         </TButtonAnimationUI>
       )}
       {/* Время */}
       <TimeSC isVisible={isVisible_pinCode} SwipeDistance={SwipeDistance}>
-        <TimeUI isVisible={isVisible_pinCode} />
+        <TimeUI />
       </TimeSC>
     </LoginPageSC>
   );

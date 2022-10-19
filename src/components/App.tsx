@@ -1,6 +1,7 @@
 import React from "react";
 import { ThemeProvider } from "styled-components";
 import { blue_theme, dark_theme, light_theme } from "../theme/theme";
+import LoginPage from "./LoginPage/LoginPage";
 import MainLayout from "./MainLayout/MainLayout";
 import { useAppStyle } from "./style";
 import { useApp } from "./useApp";
@@ -40,13 +41,13 @@ const App: React.FC = () => {
           HLocalStorage={HLocalStorage}
         />
         {/* {isAuth ? (
-        <MainLayout
-          BackgroundThemeObj={BackgroundThemeObj}
-          HLocalStorage={HLocalStorage}
-        />
-      ) : (
-        <LoginPage />
-      )} */}
+          <MainLayout
+            BackgroundThemeObj={BackgroundThemeObj}
+            HLocalStorage={HLocalStorage}
+          />
+        ) : (
+          <LoginPage />
+        )}*/}
       </AppSC>
     </ThemeProvider>
   );

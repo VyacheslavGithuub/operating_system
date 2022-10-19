@@ -4,6 +4,7 @@ import { useTButtonAnimationStyle } from "./style";
 import { ITButtonAnimationUIProps } from "./types";
 
 const TButtonAnimationUI = ({
+  size,
   children,
   onClick,
   isVisible,
@@ -11,7 +12,7 @@ const TButtonAnimationUI = ({
   const { ButtonAnimationSC } = useTButtonAnimationStyle();
   return (
     <ButtonAnimationSC onClick={onClick} isVisible={isVisible}>
-      <TransparentButtonUI>{children}</TransparentButtonUI>
+      <TransparentButtonUI size={size}>{children}</TransparentButtonUI>
     </ButtonAnimationSC>
   );
 };

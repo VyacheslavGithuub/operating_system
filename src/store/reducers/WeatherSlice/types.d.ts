@@ -1,62 +1,72 @@
-export interface IDataWeather {
-  current: {
-    // облачный покров
-    cloudcover: number;
-    // как будто
-    feelslike: number;
-    // влажность
-    humidity: number;
-    // день
-    is_day: string;
-    // время наблюдения
-    observation_time: string;
-    // осадок
-    precip: number;
-    // Температура
-    temperature: number;
-    // давление
-    pressure: number;
-    // температура
-    temperature: number;
-    // Ультрафиолетовый индекс
-    uv_index: number;
-    visibility: number;
-    // код погоды
-    weather_code: number;
-    // описания погоды
-    weather_descriptions: str[];
-    // иконки погоды
-    weather_icons: string[];
-    // градус ветра
-    wind_degree: number;
-    // направление ветра
-    wind_dir: string;
-    // скорость ветра
-    wind_speed: number;
-  };
-  location: {
-    // страна
-    country: string;
-    lat: string;
-    // местное время
-    localtime: string;
-    localtime_epoch: number;
-    lon: string;
-    // New York
-    name: string;
-    // America/New_York
-    region: string;
-    timezone_id: string;
-    utc_offset: string;
-  };
-  request: {
-    // язык
-    language: string;
-    // New York, United States of America
-    query: string;
-    // City
-    type: string;
-    // "мегаполис"
-    unit: string;
-  };
+interface Main {
+  temp: number;
+  feels_like: number;
+  temp_min: number;
+  temp_max: number;
+  pressure: number;
+  sea_level: number;
+  grnd_level: number;
+  humidity: number;
+  temp_kf: number;
+}
+
+interface Weather {
+  id: number;
+  main: string;
+  description: string;
+  icon: string;
+}
+
+interface Clouds {
+  all: number;
+}
+
+interface Wind {
+  speed: number;
+  deg: number;
+  gust: number;
+}
+
+interface Sys {
+  pod: string;
+}
+interface Wind {
+  deg: number;
+  gust: number;
+  speed: number;
+}
+interface List {
+  dt: number;
+  main: Main;
+  weather: Weather[];
+  clouds: Clouds;
+  wind: Wind;
+  visibility: number;
+  pop: number;
+  sys: Sys;
+  dt_txt: string;
+  wind: Wind;
+}
+interface Coord {
+  lat: number;
+  lon: number;
+}
+
+interface City {
+  id: number;
+  name: string;
+  coord: Coord;
+  country: string;
+  population: number;
+  timezone: number;
+  sunrise: number;
+  sunset: number;
+}
+
+export interface IWeatherAPI {
+  cod: string;
+  message: number;
+  cnt: number;
+  list: List[];
+  city: City;
 }

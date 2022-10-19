@@ -1,10 +1,6 @@
 import React from "react";
 import { useAppDispatch } from "../../store/hooks/redux";
-import {
-  putVisible_pinCode,
-  putAuth,
-  putBlur,
-} from "../../store/reducers/InputSlice/InputSlice";
+
 import Applications from "./Applications/Applications";
 import BackgroundTheme from "./BackgroundTheme/BackgroundTheme";
 import { useMainLayoutStyle } from "./style";
@@ -21,21 +17,15 @@ const MainLayout = ({
 }: IMainLayoutProps) => {
   const { MainLayoutSC } = useMainLayoutStyle();
 
-  const dispatch = useAppDispatch();
-  const handleCloses = () => {
-    dispatch(putAuth(false));
-    dispatch(putBlur(false));
-    dispatch(putVisible_pinCode(false));
-  };
+  
   return (
     <MainLayoutSC>
-      <Applications />
-      <button onClick={() => handleCloses()}>Вернуться</button>
-      {/* <Weather /> */}
+      <Weather />
       <BackgroundTheme
         BackgroundThemeObj={BackgroundThemeObj}
         HLocalStorage={HLocalStorage}
       />
+      <Applications />
     </MainLayoutSC>
   );
 };

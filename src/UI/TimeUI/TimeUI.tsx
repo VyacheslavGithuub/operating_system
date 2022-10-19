@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { useTimeUIStyle } from "./style";
 
-interface ITimeUIProps {
-  isVisible: boolean;
-}
-const TimeUI = ({ isVisible }: ITimeUIProps) => {
+// interface ITimeUIProps {
+//   isVisible: boolean;
+// }
+const TimeUI = () => {
   const { TimeSC } = useTimeUIStyle();
   const [isTime, setTime] = useState<any>();
 
