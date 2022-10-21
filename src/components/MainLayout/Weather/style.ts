@@ -9,7 +9,7 @@ const WeatherContainerSC = styled.div`
   font-size: 22px;
   padding: 15px;
   height: 300px;
-  margin-bottom: 200px;
+  margin-bottom: 20px;
 
   @media (max-width: 1200px) {
     height: 260px;
@@ -19,7 +19,7 @@ const WeatherContainerSC = styled.div`
     font-size: 18px;
   }
   @media (max-width: 450px) {
-    height: 210px;
+    height: 205px;
   }
 `;
 const WeatherCitySC = styled.div`
@@ -103,7 +103,7 @@ const IconRightArrowPos = styled.div`
   transform: rotate(180deg);
 
   @media (max-width: 450px) {
-    bottom: 2px;
+    bottom: 3px;
     right: 2px;
   }
 `;

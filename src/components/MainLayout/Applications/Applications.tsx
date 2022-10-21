@@ -20,14 +20,14 @@ const Applications = () => {
         <CardsUI variant="small" title="Watch">
           <IconWotch />
         </CardsUI>
+        <CardsUI variant="small" title="Notebook">
+          <IconNotebook />
+        </CardsUI>
         <CardsUI variant="small" title="Weather">
           <IconWeather />
         </CardsUI>
         <CardsUI variant="small" title="Calculator">
           <IconCalculator />
-        </CardsUI>
-        <CardsUI variant="small" title="Notebook">
-          <IconNotebook />
         </CardsUI>
       </AContentSC>
     </AContainerSC>

@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useState } from "react";
+import Spiner from "../Spiner/Spiner";
 import { useCardsUIStyled } from "./style";
 import { ICardsUIProps } from "./types";
 

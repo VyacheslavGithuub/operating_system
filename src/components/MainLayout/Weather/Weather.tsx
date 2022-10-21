@@ -26,7 +26,7 @@ const Weather = () => {
     WeatherTimeSC,
     WeatherMainContentSC,
   } = useWeatherStyle();
-  const { data, isLoading } = useGetDataWeatherQuery("");
+  const { data, isLoading, error } = useGetDataWeatherQuery("");
 
   const dispatch = useAppDispatch();
   const handleCloses = () => {
@@ -37,6 +37,7 @@ const Weather = () => {
 
   return (
     <WeatherContainerSC>
+      {error && <h2>WeatherAPI Error!</h2>}
       {isLoading ? (
         <SkeletonUI radius="15" />
       ) : (

@@ -1,4 +1,7 @@
 import React from "react";
+import TransparentButtonUI from "../../../UI/TransparentButtonUI/TransparentButtonUI";
+import { useBackgroundThemeStyle } from "./style";
+import { IBackgroundTheme } from "./types";
 interface IBackgroundThemeProps {
   BackgroundThemeObj: any;
   HLocalStorage: (arg0: number) => void;
@@ -7,14 +10,19 @@ const BackgroundTheme = ({
   BackgroundThemeObj,
   HLocalStorage,
 }: IBackgroundThemeProps) => {
+  const { BgThemeSC, BgThemeButtonSC, BgThemeTitleSC } =
+    useBackgroundThemeStyle();
+
   return (
-    <div>
-      {BackgroundThemeObj.map((item: any) => (
-        <button key={item.id} onClick={() => HLocalStorage(item.id)}>
-          {item.id}
-        </button>
+    <BgThemeSC>
+      {BackgroundThemeObj.map((item: IBackgroundTheme) => (
+        <BgThemeButtonSC key={item.id}>
+          <TransparentButtonUI onClick={() => HLocalStorage(item.id)}>
+            <BgThemeTitleSC>{item.name}</BgThemeTitleSC>
+          </TransparentButtonUI>
+        </BgThemeButtonSC>
       ))}
-    </div>
+    </BgThemeSC>
   );
 };
 

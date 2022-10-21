@@ -1,6 +1,4 @@
 import React from "react";
-import { useAppDispatch } from "../../store/hooks/redux";
-
 import Applications from "./Applications/Applications";
 import BackgroundTheme from "./BackgroundTheme/BackgroundTheme";
 import { useMainLayoutStyle } from "./style";
@@ -17,7 +15,6 @@ const MainLayout = ({
 }: IMainLayoutProps) => {
   const { MainLayoutSC } = useMainLayoutStyle();
 
-  
   return (
     <MainLayoutSC>
       <Weather />
