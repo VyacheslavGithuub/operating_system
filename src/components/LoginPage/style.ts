@@ -62,6 +62,7 @@ const TimeSC = styled.div<{
   isVisible: boolean;
   SwipeDistance: number;
 }>`
+  color: ${(props) => props.theme.auxiliary};
   position: absolute;
   bottom: 50px;
   left: ${({ isVisible }) => (isVisible ? "-250px" : "50px")};

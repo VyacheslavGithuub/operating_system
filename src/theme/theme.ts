@@ -2,7 +2,7 @@ import { ITheme } from "./types";
 
 export const blue_theme: ITheme = {
   main: "#2c2c54",
-  auxiliary: "#CAD3C8",
+  auxiliary: "#FDF9DC",
   textColor: "#fff",
   headingColor: "lightblue",
   BagSmallCard: "#AD003F",
@@ -10,7 +10,7 @@ export const blue_theme: ITheme = {
 };
 export const light_theme: ITheme = {
   main: "black",
-  auxiliary: "white",
+  auxiliary: "#608099",
   textColor: "#fff",
   headingColor: "lightblue",
   BagSmallCard: "#608099",
@@ -18,7 +18,7 @@ export const light_theme: ITheme = {
 };
 export const dark_theme: ITheme = {
   main: "White",
-  auxiliary: "black",
+  auxiliary: "#FDF9DC",
   textColor: "#fff",
   headingColor: "lightblue",
   BagSmallCard: "#c3a281",

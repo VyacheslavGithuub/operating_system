@@ -1,28 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { useTimeUIStyle } from "./style";
+import { useTimeUI } from "./useTimeUI";
 
-// interface ITimeUIProps {
-//   isVisible: boolean;
-// }
 const TimeUI = () => {
   const { TimeSC } = useTimeUIStyle();
-  const [isTime, setTime] = useState<any>();
-
-  const FTime = () => {
-    let data = new Date();
-    let hours: any = data.getHours();
-    let minutes: any = data.getMinutes();
-
-    setTime(("0" + hours).slice(-2) + ":" + ("0" + minutes).slice(-2));
-    setInterval(() => {
-      setTime(("0" + hours).slice(-2) + ":" + ("0" + minutes).slice(-2));
-    }, 1000);
-  };
-
-  useEffect(() => {
-    FTime();
-  }, [isTime]);
-
+  const { isTime } = useTimeUI();
   return <TimeSC>{isTime}</TimeSC>;
 };
 

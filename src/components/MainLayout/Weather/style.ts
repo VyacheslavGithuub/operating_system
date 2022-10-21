@@ -9,8 +9,8 @@ const WeatherContainerSC = styled.div`
   font-size: 22px;
   padding: 15px;
   height: 300px;
+  margin-bottom: 200px;
 
-  margin-bottom: 50px;
   @media (max-width: 1200px) {
     height: 260px;
   }
@@ -103,8 +103,8 @@ const IconRightArrowPos = styled.div`
   transform: rotate(180deg);
 
   @media (max-width: 450px) {
-    bottom: 4px;
-    right: 3px;
+    bottom: 2px;
+    right: 2px;
   }
 `;
 

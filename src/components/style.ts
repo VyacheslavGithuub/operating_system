@@ -17,8 +17,9 @@ const AppSC = styled.div<IAppSCProps>`
   background: url(${({ lg }) => lg}) 50% 50% no-repeat;
   background-size: ${({ isVisible, isAuth }) =>
     isVisible && !isAuth ? "120% 120%" : "100% 100%"};
-
+  transition: 2s;
   transition: background 0.2s ease;
+  overflow-y: auto;
 
   @media (max-width: 1025px) {
     background: url(${({ md }) => md}) 50% 50% no-repeat;
