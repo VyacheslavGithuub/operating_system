@@ -5,9 +5,11 @@ import {
   getDefaultMiddleware,
 } from "@reduxjs/toolkit";
 import InputSlice from "./reducers/InputSlice/InputSlice";
+import NotesSlice from "./reducers/NotesSlice/NotesSlice";
 
 const rootReducer = combineReducers({
   InputSlice,
+  NotesSlice,
   [weatherAPI.reducerPath]: weatherAPI.reducer,
 });
 

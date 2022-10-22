@@ -2,7 +2,10 @@ export interface ITheme {
   main: string;
   auxiliary: string;
   textColor: string;
-  headingColor: string;
   BagSmallCard: string;
   BagWeatherBlock: string;
+  NotesItemBag: string;
+  NotesItemTitle: string;
+  NotesItemSubtitle: string;
+  NotesItemDate: string;
 }

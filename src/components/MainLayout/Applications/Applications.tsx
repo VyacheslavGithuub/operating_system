@@ -7,7 +7,7 @@ import IconNotebook from "../../Icon/IconNotebook";
 import IconWeather from "../../Icon/IconWeather";
 import IconWotch from "../../Icon/IconWotch";
 import { useApplicationsStyle } from "./style";
-
+// operating_system
 const Applications = () => {
   const { AContainerSC, AContentSC } = useApplicationsStyle();
 
@@ -16,17 +16,22 @@ const Applications = () => {
       <IconAndTitle title="Applications">
         <IconBriefcase />
       </IconAndTitle>
+      {/* Card */}
+
       <AContentSC>
-        <CardsUI variant="small" title="Watch">
-          <IconWotch />
-        </CardsUI>
-        <CardsUI variant="small" title="Notebook">
-          <IconNotebook />
-        </CardsUI>
-        <CardsUI variant="small" title="Weather">
+        <CardsUI variant="small" title="Weather" url="operating_system/">
           <IconWeather />
         </CardsUI>
-        <CardsUI variant="small" title="Calculator">
+
+        <CardsUI variant="small" title="Watch" url="operating_system/wotch">
+          <IconWotch />
+        </CardsUI>
+
+        <CardsUI variant="small" title="Notebook" url="operating_system/notebook">
+          <IconNotebook />
+        </CardsUI>
+{/* Новости */}
+        <CardsUI variant="small" title="Calculator" url="operating_system/calculator">
           <IconCalculator />
         </CardsUI>
       </AContentSC>

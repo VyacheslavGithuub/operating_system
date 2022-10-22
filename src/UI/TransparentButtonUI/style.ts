@@ -22,7 +22,7 @@ const ButtonSC = styled.button<{ size?: string }>`
   }
   @media (max-width: 450px) {
     width: ${({ size }) => (size === "small" ? "90px" : "100%")};
-    height: ${({ size }) => (size === "small" ? "40px" : "100%")};
+    height: 100%;
   }
 `;
 

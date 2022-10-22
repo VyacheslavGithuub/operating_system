@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 const AContainerSC = styled.div`
-  margin-top: 40px;
+  margin-top: 100px;
   width: 100%;
 `;
 const AContentSC = styled.div`

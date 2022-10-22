@@ -28,12 +28,7 @@ const Weather = () => {
   } = useWeatherStyle();
   const { data, isLoading, error } = useGetDataWeatherQuery("");
 
-  const dispatch = useAppDispatch();
-  const handleCloses = () => {
-    dispatch(putAuth(false));
-    dispatch(putBlur(false));
-    dispatch(putVisible_pinCode(false));
-  };
+
 
   return (
     <WeatherContainerSC>
@@ -72,13 +67,13 @@ const Weather = () => {
                 <TimeUI />
               </WeatherTimeSC>
               {/* Выход */}
-              <WeatherButtonExitSC>
+              {/* <WeatherButtonExitSC>
                 <TransparentButtonUI onClick={handleCloses} size="small">
                   <IconRightArrowPos>
                     <IconRightArrow />
                   </IconRightArrowPos>
                 </TransparentButtonUI>
-              </WeatherButtonExitSC>
+              </WeatherButtonExitSC> */}
             </div>
           </WeatherWrapSC>
         )

@@ -21,6 +21,11 @@ const CardsUIContainerSC = styled.div<{ variant: string }>`
   &:hover {
     fill: white;
   }
+  & > a {
+    text-decoration: none;
+    background-color: ${(props) => props.theme.BagSmallCard};
+    fill: #b2bec3;
+  }
 `;
 const CardsShadowSC = styled.div<{ variant: string }>`
   width: 100%;

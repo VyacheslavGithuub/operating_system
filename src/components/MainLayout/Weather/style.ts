@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 const WeatherContainerSC = styled.div`
+  width: 100%;
   border-radius: 15px;
   backdrop-filter: blur(3px);
   border: 1px solid rgba(255, 255, 255, 0.2);

@@ -8,16 +8,16 @@
   },
   {
     "id": 2,
-    "name": "Тёмная",
-    "lg": "https://kartinkin.net/uploads/posts/2021-04/1617570082_32-p-chernii-fon-bez-nichego-38.jpg",
-    "md": "https://kartinkin.net/uploads/posts/2021-04/1617570082_32-p-chernii-fon-bez-nichego-38.jpg",
-    "sm": "https://kartinkin.net/uploads/posts/2021-04/1617570082_32-p-chernii-fon-bez-nichego-38.jpg"
-  },
-  {
-    "id": 3,
     "name": "Светлая",
     "lg": "https://i.pinimg.com/564x/34/43/0e/34430eaa93b23adc7af8aba7d12c8380.jpg",
     "md": "https://i.pinimg.com/564x/34/43/0e/34430eaa93b23adc7af8aba7d12c8380.jpg",
     "sm": "https://i.pinimg.com/564x/34/43/0e/34430eaa93b23adc7af8aba7d12c8380.jpg"
+  },
+  {
+    "id": 3,
+    "name": "Тёмная",
+    "lg": "https://kartinkin.net/uploads/posts/2021-04/1617570082_32-p-chernii-fon-bez-nichego-38.jpg",
+    "md": "https://kartinkin.net/uploads/posts/2021-04/1617570082_32-p-chernii-fon-bez-nichego-38.jpg",
+    "sm": "https://kartinkin.net/uploads/posts/2021-04/1617570082_32-p-chernii-fon-bez-nichego-38.jpg"
   }
 ]

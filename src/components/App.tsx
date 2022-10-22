@@ -24,8 +24,8 @@ const App: React.FC = () => {
         backgroundT === 1
           ? blue_theme
           : backgroundT === 2
-          ? dark_theme
-          : light_theme
+          ? light_theme
+          : dark_theme
       }
     >
       <AppSC
@@ -36,18 +36,18 @@ const App: React.FC = () => {
         md={BgObj.md}
         sm={BgObj.sm}
       >
-        {/* <MainLayout
+        <MainLayout
           BackgroundThemeObj={BackgroundThemeObj}
           HLocalStorage={HLocalStorage}
-        /> */}
-        {isAuth ? (
+        />
+        {/* {isAuth ? (
           <MainLayout
             BackgroundThemeObj={BackgroundThemeObj}
             HLocalStorage={HLocalStorage}
           />
         ) : (
           <LoginPage />
-        )}
+        )} */}
       </AppSC>
     </ThemeProvider>
   );
