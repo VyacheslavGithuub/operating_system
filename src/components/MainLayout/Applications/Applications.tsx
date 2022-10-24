@@ -19,7 +19,7 @@ const Applications = () => {
       {/* Card */}
 
       <AContentSC>
-        <CardsUI variant="small" title="Weather" url="operating_system/">
+        <CardsUI variant="small" title="Weather" url="operating_system/weather">
           <IconWeather />
         </CardsUI>
 
@@ -27,11 +27,19 @@ const Applications = () => {
           <IconWotch />
         </CardsUI>
 
-        <CardsUI variant="small" title="Notebook" url="operating_system/notebook">
+        <CardsUI
+          variant="small"
+          title="Notebook"
+          url="operating_system/notebook"
+        >
           <IconNotebook />
         </CardsUI>
-{/* Новости */}
-        <CardsUI variant="small" title="Calculator" url="operating_system/calculator">
+        {/* Новости */}
+        <CardsUI
+          variant="small"
+          title="Calculator"
+          url="operating_system/calculator"
+        >
           <IconCalculator />
         </CardsUI>
       </AContentSC>

@@ -2,21 +2,13 @@ import styled from "styled-components";
 
 const WeatherContainerSC = styled.div`
   width: 100%;
-  border-radius: 15px;
-  backdrop-filter: blur(3px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  background-color: ${(props) => props.theme.BagWeatherBlock};
-  box-shadow: 2px 2px 4px rgb(0 0 0 / 25%);
   font-size: 22px;
-  padding: 15px;
   height: 300px;
-  margin-bottom: 20px;
 
   @media (max-width: 1200px) {
     height: 260px;
   }
   @media (max-width: 600px) {
-    padding: 10px;
     font-size: 18px;
   }
   @media (max-width: 450px) {
@@ -24,7 +16,7 @@ const WeatherContainerSC = styled.div`
   }
 `;
 const WeatherCitySC = styled.div`
-  font-size: 4rem;
+  font-size: 50px;
   font-family: roboto;
   position: relative;
 
@@ -48,8 +40,8 @@ const WeatherCitySC = styled.div`
 const WeatherIconSC = styled.img`
   position: absolute;
 
-  width: 220px;
-  top: -50px;
+  width: 170px;
+  top: -30px;
   right: -15px;
 
   @media (max-width: 800px) {
@@ -69,12 +61,12 @@ const WeatherIconSC = styled.img`
   }
 `;
 const WeatherTemperatureSC = styled.div`
-  font-size: 4.5rem;
+  font-size: 50px;
   font-family: cursive;
 
   position: absolute;
-  top: 10px;
-  right: 150px;
+  top: 25px;
+  right: 120px;
 
   @media (max-width: 800px) {
     font-size: 3.5rem;
@@ -94,7 +86,7 @@ const WeatherTemperatureSC = styled.div`
 `;
 const WeatherWrapSC = styled.div`
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
 `;
 const IconRightArrowPos = styled.div`
   position: relative;
@@ -125,10 +117,10 @@ const WeatherButtonExitSC = styled.div`
   }
 `;
 const WeatherTimeSC = styled.div`
-  position: relative;
-  font-size: 2rem;
+  position: absolute;
+  font-size: 23px;
   top: 100px;
-  left: 20px;
+  right: 40px;
 
   @media (max-width: 800px) {
     font-size: 2rem;
@@ -149,7 +141,7 @@ const WeatherTimeSC = styled.div`
 `;
 const WeatherMainContentSC = styled.div`
   position: relative;
-  font-size: 30px;
+  font-size: 25px;
   top: 62px;
 
   @media (max-width: 1200px) {
@@ -164,9 +156,17 @@ const WeatherMainContentSC = styled.div`
     font-size: 16px;
   }
 `;
+const WeatherTapeSC = styled.div`
+  display: flex;
+`;
+const WeatherTopSC = styled.div`
+  display: flex;
+`;
 const WeatherIsDaySC = styled.div``;
 
 export const useWeatherStyle = () => ({
+  WeatherTopSC,
+  WeatherTapeSC,
   WeatherCitySC,
   WeatherIconSC,
   WeatherWrapSC,

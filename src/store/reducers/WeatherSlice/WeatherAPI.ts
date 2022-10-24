@@ -4,7 +4,7 @@ import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/dist/query/react";
 export const weatherAPI = createApi({
   reducerPath: "weather",
   baseQuery: fetchBaseQuery({
-    baseUrl: "https://api.openweathermap.org/data/2.5/",
+    baseUrl: "http://api.openweathermap.org/data/2.5/",
   }),
   endpoints: (build) => ({
     getDataWeather: build.query<IWeatherAPI, "">({

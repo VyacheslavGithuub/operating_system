@@ -4,7 +4,7 @@ import BackgroundTheme from "./BackgroundTheme/BackgroundTheme";
 import BlockAplications from "./BlockAplications/BlockAplications";
 import ButtonExit from "./ButtonExit/ButtonExit";
 import { useMainLayoutStyle } from "./style";
-import Weather from "./Weather/Weather";
+import Weather from "./Applications/Weather/Weather";
 
 interface IMainLayoutProps {
   BackgroundThemeObj: any;
