@@ -36,18 +36,18 @@ const App: React.FC = () => {
         md={BgObj.md}
         sm={BgObj.sm}
       >
-        <MainLayout
+        {/* <MainLayout
           BackgroundThemeObj={BackgroundThemeObj}
           HLocalStorage={HLocalStorage}
-        />
-        {/* {isAuth ? (
+        /> */}
+        {isAuth ? (
           <MainLayout
             BackgroundThemeObj={BackgroundThemeObj}
             HLocalStorage={HLocalStorage}
           />
         ) : (
           <LoginPage />
-        )} */}
+        )}
       </AppSC>
     </ThemeProvider>
   );

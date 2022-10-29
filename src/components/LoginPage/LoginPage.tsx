@@ -47,7 +47,7 @@ function LoginPage() {
             onClick={(event: any) => event.stopPropagation()}
           >
             <LoginPageFormSC isVisible={isVisible_pinCode}>
-              <LoginPageForm isFocus={isVisible_pinCode} />
+              <LoginPageForm />
               <EnterPinSC>Enter PIN (1234) </EnterPinSC>
               <CancelSC onClick={handleResetPinCode}>Cancel</CancelSC>
             </LoginPageFormSC>

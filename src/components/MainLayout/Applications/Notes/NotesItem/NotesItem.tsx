@@ -8,6 +8,7 @@ const NotesItem = ({ date, title, body }: INotesListProps) => {
   const {
     NotesItemSC,
     CheckMarkSC,
+    NotesItemTopSC,
     NotesItemDateSC,
     NotesItemBodySC,
     NotesItemTitleSC,
@@ -27,22 +28,24 @@ const NotesItem = ({ date, title, body }: INotesListProps) => {
       onSubmit={handleSubmit(onSubmit)}
       onClick={() => changeIsOpen()}
     >
-      <CheckMarkSC
-        isOpen={isOpen}
-        onClick={(e: React.MouseEvent<HTMLDivElement, MouseEvent>) =>
-          handleCloseNote(e)
-        }
-      >
-        <IconCheckMark />
-      </CheckMarkSC>
-
-      <NotesItemTitleSC
-        isOpen={isOpen}
-        placeholder="NEW NOTE"
-        defaultValue={title}
-        autoComplete="off"
-        {...register("title")}
-      />
+      <NotesItemTopSC>
+        <NotesItemTitleSC
+          isOpen={isOpen}
+          maxLength={60}
+          placeholder="NEW NOTE"
+          defaultValue={title}
+          autoComplete="off"
+          {...register("title")}
+        />
+        <CheckMarkSC
+          isOpen={isOpen}
+          onClick={(e: React.MouseEvent<HTMLDivElement, MouseEvent>) =>
+            handleCloseNote(e)
+          }
+        >
+          <IconCheckMark />
+        </CheckMarkSC>
+      </NotesItemTopSC>
       <NotesItemBodySC
         isOpen={isOpen}
         defaultValue={body}

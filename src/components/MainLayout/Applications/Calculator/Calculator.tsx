@@ -1,7 +1,7 @@
 import React from "react";
 
 const Calculator = () => {
-  return <div>Calculator</div>;
+  return <h2>Ждёт своей очереди</h2>;
 };
 
 export default React.memo(Calculator);

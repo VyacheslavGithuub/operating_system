@@ -4,10 +4,6 @@ const BgThemeSC = styled.div`
   width: 100%;
   display: flex;
   justify-content: space-between;
-
-  @media (max-width: 600px) {
-    justify-content: space-between;
-  }
 `;
 const BgThemeButtonSC = styled.div`
   margin-right: 15px;
@@ -18,7 +14,10 @@ const BgThemeButtonSC = styled.div`
   }
   @media (max-width: 600px) {
     width: 30%;
-    margin-right: 0px;
+    margin-right: 15px;
+  }
+  @media (max-width: 400px) {
+    margin-right: 5px;
   }
 `;
 const BgThemeTitleSC = styled.div`

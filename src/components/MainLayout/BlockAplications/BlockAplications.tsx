@@ -13,9 +13,9 @@ const BlockAplications = (props: Props) => {
   return (
     <BlockAplicationsSC>
       <Routes>
+        <Route path="operating_system" element={<Notes />} />
         <Route path="operating_system/weather" element={<Weather />} />
         <Route path="operating_system/wotch" element={<Wotch />} />
-        <Route path="operating_system/notebook" element={<Notes />} />
         <Route path="operating_system/calculator" element={<Calculator />} />
       </Routes>
     </BlockAplicationsSC>

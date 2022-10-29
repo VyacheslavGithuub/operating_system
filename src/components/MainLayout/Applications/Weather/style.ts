@@ -3,16 +3,16 @@ import styled from "styled-components";
 const WeatherContainerSC = styled.div`
   width: 100%;
   font-size: 22px;
-  height: 300px;
-
+  /* height: 300px; */
+  height: 100%;
   @media (max-width: 1200px) {
-    height: 260px;
+    /* height: 260px; */
   }
   @media (max-width: 600px) {
     font-size: 18px;
   }
   @media (max-width: 450px) {
-    height: 205px;
+    /* height: 205px; */
   }
 `;
 const WeatherCitySC = styled.div`

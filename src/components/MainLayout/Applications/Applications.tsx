@@ -19,6 +19,9 @@ const Applications = () => {
       {/* Card */}
 
       <AContentSC>
+        <CardsUI variant="small" title="Notebook" url="operating_system/">
+          <IconNotebook />
+        </CardsUI>
         <CardsUI variant="small" title="Weather" url="operating_system/weather">
           <IconWeather />
         </CardsUI>
@@ -27,14 +30,6 @@ const Applications = () => {
           <IconWotch />
         </CardsUI>
 
-        <CardsUI
-          variant="small"
-          title="Notebook"
-          url="operating_system/notebook"
-        >
-          <IconNotebook />
-        </CardsUI>
-        {/* Новости */}
         <CardsUI
           variant="small"
           title="Calculator"

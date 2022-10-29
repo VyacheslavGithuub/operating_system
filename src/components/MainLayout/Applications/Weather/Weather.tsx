@@ -19,7 +19,7 @@ const Weather = () => {
   } = useWeatherStyle();
   const { data, isLoading, error } = useGetDataWeatherQuery("");
 
-  let newDate = { ...data?.list };
+  // let newDate = { ...data?.list };
 
   return (
     <WeatherContainerSC>
@@ -29,7 +29,7 @@ const Weather = () => {
       ) : (
         data && (
           <WeatherWrapSC>
-            {/* <WeatherTopSC>
+            <WeatherTopSC>
               <div>
                 <WeatherBlockCity>
                   <WeatherCitySC>{data.city.name}</WeatherCitySC>
@@ -53,8 +53,8 @@ const Weather = () => {
                   <TimeUI />
                 </WeatherTimeSC>
               </div>
-            </WeatherTopSC> */}
-            <WeatherTapeSC>
+            </WeatherTopSC>
+            {/* <WeatherTapeSC>
               {data.list.map((i, index) => (
                 <div key={index}>
                   <div>{i.dt_txt}</div>
@@ -66,7 +66,7 @@ const Weather = () => {
                   <div>{i.main.temp_max}</div>
                 </div>
               ))}
-            </WeatherTapeSC>
+            </WeatherTapeSC> */}
           </WeatherWrapSC>
         )
       )}

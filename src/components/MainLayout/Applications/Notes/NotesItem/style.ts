@@ -53,8 +53,11 @@ const NotesItemTitleSC = styled.input<ITitleProps>`
 interface IBodyProps {
   isOpen: boolean;
 }
-const NotesItemBodySC = styled.input<IBodyProps>`
-  width: 95%;
+const NotesItemBodySC = styled.textarea<IBodyProps>`
+  width: 85%;
+  height: ${({ isOpen }) => (isOpen ? "500px" : "17px")};
+  overflow: ${({ isOpen }) => (isOpen ? "auto" : "hidden")};
+  resize: none;
   color: ${(props) => props.theme.NotesItemSubtitle};
   font-size: 18px;
   cursor: ${({ isOpen }) => !isOpen && "pointer"};
@@ -66,12 +69,33 @@ const NotesItemBodySC = styled.input<IBodyProps>`
   &::placeholder {
     color: ${(props) => props.theme.NotesItemSubtitle};
   }
+
+  @media (min-width: 600px) {
+    &::-webkit-scrollbar {
+      width: 10px;
+    }
+
+    &::-webkit-scrollbar-track {
+      -webkit-box-shadow: 5px 5px 5px -5px rgba(34, 60, 80, 0.2) inset;
+      background-color: rgba(0, 0, 0, 0.4);
+      border-radius: 10px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      border-radius: 10px;
+      background: linear-gradient(
+        180deg,
+        ${(props) => props.theme.BagSmallCard},
+        rgba(250, 250, 250, 0.3)
+      );
+    }
+  }
 `;
 interface IDateProps {
   isOpen: boolean;
 }
 const NotesItemDateSC = styled.div<IDateProps>`
-  margin-top: 5px;
+  margin-top: 3px;
   font-size: 14px;
   font-weight: 600;
   color: ${(props) => props.theme.NotesItemDate};
@@ -82,15 +106,18 @@ interface ICheckMarkProps {
 }
 const CheckMarkSC = styled.div<ICheckMarkProps>`
   cursor: pointer;
-  position: absolute;
-  top: 10;
-  right: 20px;
+  fill: ${({ theme }) => theme.main};
   display: ${({ isOpen }) => !isOpen && "none"};
+`;
+const NotesItemTopSC = styled.div`
+  display: flex;
+  justify-content: space-between;
 `;
 
 export const useNotesItemStyle = () => ({
   NotesItemSC,
   CheckMarkSC,
+  NotesItemTopSC,
   NotesItemDateSC,
   NotesItemBodySC,
   NotesItemTitleSC,

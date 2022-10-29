@@ -13,12 +13,18 @@ export const useLoginPageForm = () => {
     formState: { errors },
   } = useForm<ILoginPageFormValues>();
 
+  const error = errors.pin?.ref?.value.length === 4 ? true : false;
+
   const onSubmit = (data: ILoginPageFormValues) => {
     data && dispatch(putAuth(true));
   };
 
+  React.useEffect(() => {
+    setFocus("pin");
+  }, [setFocus]);
+
   return {
-    errors,
+    error,
     setFocus,
     register,
     onSubmit,

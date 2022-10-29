@@ -28,9 +28,12 @@ const LoginPageCenterBlock = styled.div`
   }
 `;
 const EnterPinSC = styled.span`
-  color: white;
+  color: ${({ theme }) => theme.auxiliary};
   font-family: "Rubik", sans-serif;
   font-size: 14px;
+  @media (max-width: 600px) {
+    color: ${({ theme }) => theme.main};
+  }
 `;
 const CancelSC = styled.span`
   color: #a4b0be;

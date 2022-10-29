@@ -20,7 +20,7 @@ const ButtonSC = styled.button<{ size?: string }>`
     border: 1px solid rgba(255, 255, 255, 0.2);
     background-color: rgba(255, 255, 255, 0.2);
   }
-  @media (max-width: 450px) {
+  @media (max-width: 600px) {
     width: ${({ size }) => (size === "small" ? "90px" : "100%")};
     height: 100%;
   }

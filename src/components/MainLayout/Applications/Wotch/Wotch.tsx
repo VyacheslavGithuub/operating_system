@@ -1,7 +1,7 @@
 import React from "react";
 
 const Wotch = () => {
-  return <div>Wotch</div>;
+  return <h2>Разрабатывается дизайн</h2>;
 };
 
 export default React.memo(Wotch);

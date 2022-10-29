@@ -20,6 +20,7 @@ export const InputSlice = createSlice({
     putVisible_pinCode: (state, action) => {
       state.isVisible_pinCode = action.payload;
     },
+
   },
 });
 
