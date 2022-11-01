@@ -8,4 +8,10 @@ export interface ITheme {
   NotesItemTitle: string;
   NotesItemSubtitle: string;
   NotesItemDate: string;
+  WotchCircle: string;
+  WotchShield: string;
+  WotchShieldV2: string;
+  WotchHour: string;
+  WotchMinute: string;
+  WotchSecond: string;
 }

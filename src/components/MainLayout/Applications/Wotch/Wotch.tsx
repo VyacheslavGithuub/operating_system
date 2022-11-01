@@ -1,7 +1,17 @@
 import React from "react";
+import { WotchContainer } from "./style";
+import WotchContent from "./WotchContent/WotchContent";
+import WotchHeader from "./WotchHeader/WotchHeader";
 
 const Wotch = () => {
-  return <h2>Разрабатывается дизайн</h2>;
+  const { WotchContainerSC } = WotchContainer();
+
+  return (
+    <WotchContainerSC>
+      {/* <WotchHeader /> */}
+      <WotchContent />
+    </WotchContainerSC>
+  );
 };
 
 export default React.memo(Wotch);
