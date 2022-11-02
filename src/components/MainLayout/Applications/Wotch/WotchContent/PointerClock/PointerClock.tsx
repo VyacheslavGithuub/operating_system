@@ -3,32 +3,27 @@ import IconShield from "../../../../../Icon/IconWotch/IconWotchShield";
 import IconWotchCircle from "../../../../../Icon/IconWotch/IconWotchCircle";
 import { usePointerClockStyle } from "./style";
 import { usePointerClock } from "./usePointerClock";
+import PointerClockSeconds from "./PointerClockUI/PointerClockSeconds";
+import PointerClockMinutes from "./PointerClockUI/PointerClockMinutes";
+import PointerClockHours from "./PointerClockUI/PointerClockHours";
 
 const PointerClock = () => {
-  const {
-    PointerClockSC,
-    PointerClockHourSC,
-    PointerClockMinutSC,
-    PointerClockSecondSC,
-    PointerClockShieldSC,
-    PointerClockShieldLvl2SC,
-  } = usePointerClockStyle();
-
-  const { getHours, getMinutes, getSeconds } = usePointerClock();
-  console.log(getMinutes);
+  const { PointerClockSC, PointerClockShieldSC, PointerClockShieldLvl2SC } =
+    usePointerClockStyle();
+  const { rotateShield, handleRotateShield } = usePointerClock();
 
   return (
-    <PointerClockSC>
+    <PointerClockSC rotate={rotateShield}>
       <IconWotchCircle />
       <PointerClockShieldSC>
         <IconShield />
       </PointerClockShieldSC>
-      <PointerClockShieldLvl2SC>
+      <PointerClockShieldLvl2SC onClick={handleRotateShield}>
         <IconShield />
       </PointerClockShieldLvl2SC>
-      <PointerClockHourSC hours={getHours} />
-      <PointerClockMinutSC minuts={getMinutes} />
-      <PointerClockSecondSC second={getSeconds} />
+      <PointerClockHours />
+      <PointerClockMinutes />
+      <PointerClockSeconds />
     </PointerClockSC>
   );
 };
