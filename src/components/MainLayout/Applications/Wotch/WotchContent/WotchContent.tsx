@@ -3,6 +3,10 @@ import TransparentButtonUI from "../../../../../UI/TransparentButtonUI/Transpare
 import PointerClock from "./PointerClock/PointerClock";
 import { useWotchContentStyle } from "./style";
 
+interface IWotchContentProps {
+  watchOption: string;
+}
+
 const WotchContent = () => {
   const { WotchContentSC } = useWotchContentStyle();
 

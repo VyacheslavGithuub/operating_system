@@ -46,14 +46,20 @@ export const useLoginPage = () => {
   const handleSetPinCode = () => {
     dispatch(putVisible_pinCode(true));
   };
+  // Открываем поле с паролем нажимая на Enter
+  const handleKeyLogin = (e: any) => {
+    if (e.keyCode === 13) handleSetPinCode();
+    if (e.keyCode === 27) handleResetPinCode();
+  };
 
   return {
     isAuth,
     isMobile,
     swipeProps,
     SwipeDistance,
-    isVisible_pinCode,
+    handleKeyLogin,
     handleSetPinCode,
+    isVisible_pinCode,
     handleResetPinCode,
     handleResetPinCodeMobile,
   };

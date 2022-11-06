@@ -26,6 +26,7 @@ function LoginPage() {
     isMobile,
     swipeProps,
     SwipeDistance,
+    handleKeyLogin,
     handleSetPinCode,
     isVisible_pinCode,
     handleResetPinCode,
@@ -38,6 +39,8 @@ function LoginPage() {
       SwipeDistance={SwipeDistance}
       onClick={handleResetPinCodeMobile}
       isBlur={isVisible_pinCode}
+      onKeyDown={handleKeyLogin}
+      tabIndex={0}
     >
       {/* Форма Входа */}
       {isVisible_pinCode && (

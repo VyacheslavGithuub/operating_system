@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 const WotchContentSC = styled.div`
-  height: calc(100% - 40px);
+  height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;

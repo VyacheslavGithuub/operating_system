@@ -58,4 +58,4 @@ const NotesItem = ({ date, title, body }: INotesListProps) => {
   );
 };
 
-export default NotesItem;
+export default React.memo(NotesItem);

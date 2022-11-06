@@ -1,14 +1,13 @@
 import React from "react";
+import TransparentButtonUI from "../../../../UI/TransparentButtonUI/TransparentButtonUI";
 import { WotchContainer } from "./style";
 import WotchContent from "./WotchContent/WotchContent";
-import WotchHeader from "./WotchHeader/WotchHeader";
 
 const Wotch = () => {
   const { WotchContainerSC } = WotchContainer();
 
   return (
     <WotchContainerSC>
-      {/* <WotchHeader /> */}
       <WotchContent />
     </WotchContainerSC>
   );

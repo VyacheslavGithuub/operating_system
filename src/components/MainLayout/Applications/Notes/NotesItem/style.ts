@@ -14,8 +14,9 @@ const NotesItemSC = styled.form<IItemProps>`
   z-index: ${({ isOpen }) => (isOpen ? "20" : 0)};
   opacity: 0;
   animation: ${AnimHare} 1s linear forwards;
-  height: ${({ isOpen }) => (isOpen ? "550px" : "15%")};
-  overflow-y: auto;
+  height: ${({ isOpen }) => (isOpen ? "480px" : "15%")};
+  overflow: hidden;
+
   transition: height 0.3s, background 3s, transform 2s;
   padding: 10px;
   background: linear-gradient(
@@ -29,7 +30,7 @@ const NotesItemSC = styled.form<IItemProps>`
   cursor: ${({ isOpen }) => (isOpen ? "auto" : "pointer")};
 
   @media (max-width: 600px) {
-    height: ${({ isOpen }) => (isOpen ? "522px" : "15%")};
+    height: ${({ isOpen }) => (isOpen ? "450px" : "15%")};
   }
 `;
 interface ITitleProps {
@@ -55,8 +56,8 @@ interface IBodyProps {
 }
 const NotesItemBodySC = styled.textarea<IBodyProps>`
   width: 85%;
-  height: ${({ isOpen }) => (isOpen ? "500px" : "17px")};
-  overflow: ${({ isOpen }) => (isOpen ? "auto" : "hidden")};
+  height: ${({ isOpen }) => (isOpen ? "420px" : "17px")};
+  overflow: hidden;
   resize: none;
   color: ${(props) => props.theme.NotesItemSubtitle};
   font-size: 18px;

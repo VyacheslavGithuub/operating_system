@@ -2,26 +2,25 @@ import styled from "styled-components";
 
 const CardsUIContainerSC = styled.div<{ variant: string }>`
   background-color: ${(props) => props.theme.BagSmallCard};
-  height: 150px;
   border-radius: 15px;
-  flex: 1 1 calc((100% / 4) - 2rem);
-  fill: #b2bec3;
+  /* fill: #b2bec3; */
 
   @media (max-width: 800px) {
-    flex: 1 1 calc((100% / 3) - 2rem);
   }
   @media (max-width: 600px) {
-    flex: 1 1 calc((100% / 2) - 2rem);
     height: 140px;
   }
   @media (max-width: 260px) {
-    flex: 1 1 calc(100% - 2rem);
   }
 
   &:hover {
     fill: white;
   }
   & > a {
+    width: 270px;
+
+    display: flex;
+    border-radius: 15px;
     text-decoration: none;
     background-color: ${(props) => props.theme.BagSmallCard};
     fill: #b2bec3;
