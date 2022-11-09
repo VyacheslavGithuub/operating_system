@@ -6,6 +6,7 @@ export const useMrCoder = () => {
   useEffect(() => {
     const data = new Date();
     const hours = data.getHours();
+    const day = data.getDay();
     if (hours >= 0) {
       setMrState("snake");
     }
@@ -14,6 +15,9 @@ export const useMrCoder = () => {
     }
     if (hours > 18) {
       setMrState("seal");
+    }
+    if (day === 0 || day === 1) {
+      setMrState("rat");
     }
   }, []);
   return { MrState };

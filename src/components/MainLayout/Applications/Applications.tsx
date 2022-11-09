@@ -77,21 +77,21 @@ const Applications = () => {
 
           <CardsUI
             variant="small"
-            title="Calculator"
+            title="guess the picture"
             url="operating_system/remembering_images"
           >
             <IconSword />
           </CardsUI>
           <CardsUI
             variant="small"
-            title="Calculator"
+            title="Tags"
             url="operating_system/remembering_images"
           >
             <IconTegs />
           </CardsUI>
           <CardsUI
             variant="small"
-            title="Calculator"
+            title="News"
             url="operating_system/remembering_images"
           >
             <IconNews />

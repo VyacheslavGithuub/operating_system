@@ -1,6 +1,8 @@
 import styled from "styled-components";
 
 const BlockAplicationsSC = styled.div`
+  display: flex;
+  justify-content: center;
   border-radius: 15px;
   backdrop-filter: blur(3px);
   border: 1px solid rgba(255, 255, 255, 0.2);
@@ -12,7 +14,6 @@ const BlockAplicationsSC = styled.div`
   margin-bottom: 20px;
 
   @media (max-width: 600px) {
-    height: 550px;
     padding: 5px;
   }
 `;

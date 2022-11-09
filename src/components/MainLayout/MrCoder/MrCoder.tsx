@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import IconMrPanda from "../../Icon/IconMrCoder/IconMrPanda";
+import IconMrRat from "../../Icon/IconMrCoder/IconMrRat";
 import IconMrSeal from "../../Icon/IconMrCoder/IconMrSeal";
 import IconMrSnake from "../../Icon/IconMrCoder/IconMrSnake";
 import MrCoderUI from "./MrCoderUI/MrCoderUI";
@@ -26,6 +27,11 @@ const MrCoder = () => {
       {MrState === "snake" && (
         <MrCoderUI title="Mr Кодер спит" type="snake">
           <IconMrSnake />
+        </MrCoderUI>
+      )}
+      {MrState === "rat" && (
+        <MrCoderUI title="У Mr Кодера сегодня выходной" type="rat">
+          <IconMrRat />
         </MrCoderUI>
       )}
     </MrCoderSC>

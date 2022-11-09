@@ -1,5 +1,5 @@
 interface IMrCoderUIProps {
   children: React.ReactNode;
   title: string;
-  type: string | "panda" | "seal" | "snake";
+  type: string | "panda" | "rat" | "snake";
 }
