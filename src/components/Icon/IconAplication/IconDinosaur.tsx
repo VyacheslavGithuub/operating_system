@@ -2,14 +2,12 @@ import React from "react";
 import { useMatchMedia } from "../../../hooks/useMatchMedia";
 
 const IconDinosaur = () => {
-  const { isMobile }: any = useMatchMedia();
-  let width = isMobile ? "48" : "100";
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
       x="0px"
       y="0px"
-      width={width}
+      width="100px"
       viewBox="0 0 48 48"
     >
       <path

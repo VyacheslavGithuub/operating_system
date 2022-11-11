@@ -14,6 +14,10 @@ const TitleSC = styled.div`
 const IconAndTitleSC = styled.div`
   display: flex;
   align-items: baseline;
+
+  @media (max-width: 600px) {
+    display: none;
+  }
 `;
 export const useIconAndTitleStyle = () => ({
   IconSC,

@@ -1,17 +1,8 @@
 import styled from "styled-components";
 
-const CardsUIContainerSC = styled.div<{ variant: string }>`
+const CardsUIContainerSC = styled.div`
   background-color: ${(props) => props.theme.BagSmallCard};
   border-radius: 15px;
-  /* fill: #b2bec3; */
-
-  @media (max-width: 800px) {
-  }
-  @media (max-width: 600px) {
-    height: 140px;
-  }
-  @media (max-width: 260px) {
-  }
 
   &:hover {
     fill: white;
@@ -24,9 +15,13 @@ const CardsUIContainerSC = styled.div<{ variant: string }>`
     text-decoration: none;
     background-color: ${(props) => props.theme.BagSmallCard};
     fill: #b2bec3;
+
+    @media (max-width: 400px) {
+      width: calc(100vw - 20px);
+    }
   }
 `;
-const CardsShadowSC = styled.div<{ variant: string }>`
+const CardsShadowSC = styled.div`
   width: 100%;
   height: 100%;
 
@@ -42,7 +37,7 @@ const CardsShadowSC = styled.div<{ variant: string }>`
   &:hover {
     background-color: rgba(0, 0, 0, 0.1);
     & h3 {
-      color: ${({ variant }) => (variant === "small" ? "white" : "")};
+      color: white;
     }
   }
 
@@ -51,16 +46,16 @@ const CardsShadowSC = styled.div<{ variant: string }>`
   }
   @media (max-width: 600px) {
     align-items: center;
-    background-color: rgba(0, 0, 0, 0.1);
+    background: none;
   }
 `;
-const CardTitleSC = styled.h3<{ variant: string }>`
-  color: ${({ variant }) => (variant === "small" ? "#b2bec3" : "white")};
-  font-size: ${({ variant }) => (variant === "small" ? "20px" : "1.5rem")};
+const CardTitleSC = styled.h3`
+  color: #b2bec3;
+  font-size: 20px;
   text-transform: uppercase;
   font-weight: 600;
   margin: 0;
-  line-height: 200%;
+  line-height: 150%;
   margin-left: 10px;
 
   @media (max-width: 1200px) {
@@ -68,7 +63,8 @@ const CardTitleSC = styled.h3<{ variant: string }>`
     margin-left: 0;
   }
   @media (max-width: 600px) {
-    font-size: 16px;
+    font-size: 20px;
+    color: white;
   }
 `;
 const CardIconSC = styled.div`

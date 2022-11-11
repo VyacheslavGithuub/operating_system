@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 const AContainerSC = styled.div`
-  margin-top: 25px;
+  margin: 10px 0px;
   width: 100%;
   overflow: hidden;
   flex-wrap: nowrap;

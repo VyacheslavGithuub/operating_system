@@ -14,4 +14,5 @@ export interface ITheme {
   WotchHour: string;
   WotchMinute: string;
   WotchSecond: string;
+  PauseHover: string;
 }

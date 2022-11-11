@@ -4,7 +4,6 @@ const MainLayoutSC = styled.div`
   position: relative;
   width: 70%;
   max-width: 1130px;
-  padding-top: 15px;
   margin: 0 auto;
   @media (max-width: 1600px) {
     width: 80%;

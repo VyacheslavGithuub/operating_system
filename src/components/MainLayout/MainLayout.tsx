@@ -1,7 +1,7 @@
 import React from "react";
 import Applications from "./Applications/Applications";
 import BackgroundTheme from "./BackgroundTheme/BackgroundTheme";
-import BlockAplications from "./BlockAplications/BlockAplications";
+import DisplayAplications from "./DisplayAplications/DisplayAplications";
 import MrCoder from "./MrCoder/MrCoder";
 import { useMainLayoutStyle } from "./style";
 import { IMainLayoutProps } from "./type";
@@ -16,7 +16,7 @@ const MainLayout = ({
     <>
       <MrCoder />
       <MainLayoutSC>
-        <BlockAplications />
+        <DisplayAplications />
         <BackgroundTheme
           BackgroundThemeObj={BackgroundThemeObj}
           HLocalStorage={HLocalStorage}

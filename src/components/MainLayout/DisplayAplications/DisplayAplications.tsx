@@ -6,15 +6,13 @@ import Snake from "../Applications/Snake/Snake";
 import Tetris from "../Applications/Tetris/Tetris";
 import Weather from "../Applications/Weather/Weather";
 import Wotch from "../Applications/Wotch/Wotch";
-import { useBlockAplicationsStyle } from "./style";
+import { useDisplayAplicationsStyle } from "./style";
 
-type Props = {};
-
-const BlockAplications = (props: Props) => {
-  const { BlockAplicationsSC } = useBlockAplicationsStyle();
+const DisplayAplications = () => {
+  const { DisplayAplicationsSC } = useDisplayAplicationsStyle();
 
   return (
-    <BlockAplicationsSC>
+    <DisplayAplicationsSC>
       <Routes>
         <Route path="operating_system" element={<Notes />} />
         <Route path="operating_system/weather" element={<Weather />} />
@@ -24,8 +22,8 @@ const BlockAplications = (props: Props) => {
         <Route path="operating_system/snake" element={<Snake />} />
         <Route path="operating_system/tetris" element={<Tetris />} />
       </Routes>
-    </BlockAplicationsSC>
+    </DisplayAplicationsSC>
   );
 };
 
-export default BlockAplications;
+export default DisplayAplications;

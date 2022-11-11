@@ -1,6 +1,6 @@
 import React from "react";
-import IconShield from "../../../../../Icon/IconWotch/IconWotchShield";
-import IconWotchCircle from "../../../../../Icon/IconWotch/IconWotchCircle";
+import IconShield from "../../../../../Icon/IconAplication/IconWotch/IconWotchShield";
+import IconWotchCircle from "../../../../../Icon/IconAplication/IconWotch/IconWotchCircle";
 import { usePointerClockStyle } from "./style";
 import { usePointerClock } from "./usePointerClock";
 import PointerClockSeconds from "./PointerClockUI/PointerClockSeconds";
