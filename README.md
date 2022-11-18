@@ -5,6 +5,8 @@ Development suspended
 https://vyacheslavgithuub.github.io/operating_system/
 
 ### `Runs the app in the development mode`
+git clone https://github.com/VyacheslavGithuub/operating_system.git
+npm install
 npm start
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
