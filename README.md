@@ -4,7 +4,7 @@ In developing
 # Pajes
 https://vyacheslavgithuub.github.io/operating_system/
 
-# Runs the app in the development mode
+# Start project
 ### git clone https://github.com/VyacheslavGithuub/operating_system.git
 ### npm install
 ### npm start
