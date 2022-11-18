@@ -5,9 +5,9 @@ Development suspended
 https://vyacheslavgithuub.github.io/operating_system/
 
 # Runs the app in the development mode
-###git clone https://github.com/VyacheslavGithuub/operating_system.git
-###npm install
-###npm start
+### git clone https://github.com/VyacheslavGithuub/operating_system.git
+### npm install
+### npm start
 
 # Photo
 ![image](https://user-images.githubusercontent.com/111220807/202090248-72280e45-a6bb-48b4-8a77-b81d1033cf25.png)
