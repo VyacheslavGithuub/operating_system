@@ -1,5 +1,5 @@
 # State
-In developing
+development suspended
 
 # Pajes
 https://vyacheslavgithuub.github.io/operating_system/
